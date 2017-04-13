@@ -130,7 +130,18 @@ static float kCursorGeom[] = {
 static int kCursorVertexCount = 6;
 
 // Available colors the user can paint with.
-static const std::array<std::array<float, 4>, 53> kColors = {
+static const std::array<std::array<float, 4>, 82> kColors = {
+    Utils::ColorFromHex(0xa0fff0e6),  // lightest orange
+    Utils::ColorFromHex(0xa0ffd1b3),  // lighter orange
+    Utils::ColorFromHex(0xa0ffb380),  // light orange
+    Utils::ColorFromHex(0xa0ff944d),  // kinda light orange
+    Utils::ColorFromHex(0xa0ff751a),  // lightish orange
+    Utils::ColorFromHex(0xa0e65c00),  // darkish orange
+    Utils::ColorFromHex(0xa0b34700),  // kinda dark orange
+    Utils::ColorFromHex(0xa0803300),  // dark orange
+    Utils::ColorFromHex(0xa04d1f00),  // darker orange
+    Utils::ColorFromHex(0xa01a0a00),  // darkest orange
+    Utils::ColorFromHex(0xa0845f00),  // brown
     Utils::ColorFromHex(0xa01a0000),  // darkest red
     Utils::ColorFromHex(0xa04d0000),  // darker red
     Utils::ColorFromHex(0xa0800000),  // dark red
@@ -161,30 +172,48 @@ static const std::array<std::array<float, 4>, 53> kColors = {
     Utils::ColorFromHex(0xa0df80ff),  // light purple
     Utils::ColorFromHex(0xa0ecb3ff),  // lighter purple
     Utils::ColorFromHex(0xa0f9e6ff),  // lightest purple
-    Utils::ColorFromHex(0xa0845f00),  // brown
-    Utils::ColorFromHex(0xa09d9d9d),  // gray
-    Utils::ColorFromHex(0xa0e0e0e0),  // white
-    Utils::ColorFromHex(0xa0000000),  // darkest blue
+    Utils::ColorFromHex(0xa0e6ecff),  // lightest blue
+    Utils::ColorFromHex(0xa0b3c6ff),  // lighter blue
+    Utils::ColorFromHex(0xa0809fff),  // light blue
+    Utils::ColorFromHex(0xa04d79ff),  // kinda light blue
+    Utils::ColorFromHex(0xa01a1aff),  // lightish blue
+    Utils::ColorFromHex(0xa00000b3),  // darkish blue
+    Utils::ColorFromHex(0xa0000080),  // kinda dark blue
     Utils::ColorFromHex(0xa000001a),  // darker blue
     Utils::ColorFromHex(0xa000004d),  // dark blue
-    Utils::ColorFromHex(0xa0000080),  // kinda dark blue
-    Utils::ColorFromHex(0xa00000b3),  // darkish blue
-    Utils::ColorFromHex(0xa01a1aff),  // lightish blue
-    Utils::ColorFromHex(0xa04d79ff),  // kinda light blue
-    Utils::ColorFromHex(0xa0809fff),  // light blue
-    Utils::ColorFromHex(0xa0b3c6ff),  // lighter blue
-    Utils::ColorFromHex(0xa0e6ecff),  // lightest blue
-    Utils::ColorFromHex(0xa0001a09),  // darkest green
-    Utils::ColorFromHex(0xa0004d1a),  // darker green
-    Utils::ColorFromHex(0xa000802b),  // dark green
-    Utils::ColorFromHex(0xa000b33c),  // kinda dark green
-    Utils::ColorFromHex(0xa000e64d),  // darkish green
-    Utils::ColorFromHex(0xa01aff66),  // lightish green
-    Utils::ColorFromHex(0xa04dff88),  // kinda light green
-    Utils::ColorFromHex(0xa080ffaa),  // light green
-    Utils::ColorFromHex(0xa0b3ffcc),  // lighter green
+    Utils::ColorFromHex(0xa000001a),  // darkest blue
+    Utils::ColorFromHex(0xa0000000),  // black
+    Utils::ColorFromHex(0xa01a1a1a),  // darkest gray
+    Utils::ColorFromHex(0xa0333333),  // darker gray
+    Utils::ColorFromHex(0xa04d4d4d),  // dark gray
+    Utils::ColorFromHex(0xa0666666),  // kinda dark gray
+    Utils::ColorFromHex(0xa0808080),  // darkish gray
+    Utils::ColorFromHex(0xa0999999),  // lightish gray
+    Utils::ColorFromHex(0xa0b3b3b3),  // kinda light gray
+    Utils::ColorFromHex(0xa0cccccc),  // light gray
+    Utils::ColorFromHex(0xa0e6e6e6),  // lighter gray
+    Utils::ColorFromHex(0xa0ffffff),  // lightest gray
     Utils::ColorFromHex(0xa0e6ffee),  // lightest green
-};
+    Utils::ColorFromHex(0xa0b3ffcc),  // lighter green
+    Utils::ColorFromHex(0xa080ffaa),  // light green
+    Utils::ColorFromHex(0xa04dff88),  // kinda light green
+    Utils::ColorFromHex(0xa01aff66),  // lightish green
+    Utils::ColorFromHex(0xa000e64d),  // darkish green
+    Utils::ColorFromHex(0xa000b33c),  // kinda dark green
+    Utils::ColorFromHex(0xa000802b),  // dark green
+    Utils::ColorFromHex(0xa0004d1a),  // darker green
+    Utils::ColorFromHex(0xa0001a09),  // darkest green
+    Utils::ColorFromHex(0xa01a1a00),  // darkest yellow
+    Utils::ColorFromHex(0xa04d4d00),  // darker yellow
+    Utils::ColorFromHex(0xa0808000),  // dark yellow
+    Utils::ColorFromHex(0xa0b3b300),  // kinda dark yellow
+    Utils::ColorFromHex(0xa0e6e600),  // darkish yellow
+    Utils::ColorFromHex(0xa0ffff1a),  // lightish yellow
+    Utils::ColorFromHex(0xa0ffff4d),  // kinda light yellow
+    Utils::ColorFromHex(0xa0ffff80),  // light yellow
+    Utils::ColorFromHex(0xa0ffffb3),  // lighter yellow
+    Utils::ColorFromHex(0xa0ffffe6),  // lightest yellow
+    };
 
 // When the user moves their finger horizontally by more than this
 // threshold distance, we switch colors.
