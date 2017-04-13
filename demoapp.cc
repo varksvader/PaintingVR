@@ -130,7 +130,7 @@ static float kCursorGeom[] = {
 static int kCursorVertexCount = 6;
 
 // Available colors the user can paint with.
-static const std::array<std::array<float, 4>, 82> kColors = {
+static const std::array<std::array<float, 4>, 81> kColors = {
     Utils::ColorFromHex(0xa0fff0e6),  // lightest orange
     Utils::ColorFromHex(0xa0ffd1b3),  // lighter orange
     Utils::ColorFromHex(0xa0ffb380),  // light orange
@@ -141,7 +141,6 @@ static const std::array<std::array<float, 4>, 82> kColors = {
     Utils::ColorFromHex(0xa0803300),  // dark orange
     Utils::ColorFromHex(0xa04d1f00),  // darker orange
     Utils::ColorFromHex(0xa01a0a00),  // darkest orange
-    Utils::ColorFromHex(0xa0845f00),  // brown
     Utils::ColorFromHex(0xa01a0000),  // darkest red
     Utils::ColorFromHex(0xa04d0000),  // darker red
     Utils::ColorFromHex(0xa0800000),  // dark red
