@@ -49,7 +49,7 @@ static const int kGroundTextureWidth = 64;
 static const int kGroundTextureHeight = 64;
 
 // Colors (R, G, B).
-static const std::array<float, 4> kSkyColor = Utils::ColorFromHex(0xff131e35);
+static const std::array<float, 4> kSkyColor = Utils::ColorFromHex(0xffffffff);
 static const std::array<float, 4> kGroundColor =
     Utils::ColorFromHex(0xff172644);
 static const std::array<float, 4> kCursorBorderColor =
@@ -236,8 +236,8 @@ static const float kMinPaintSegmentLength = 4.0f;
 static const int kVboCommitThreshold = 50;
 
 // Minimum and maximum stroke widths.
-static const float kMinStrokeWidth = 1.5f;
-static const float kMaxStrokeWidth = 4.0f;
+static const float kMinStrokeWidth = .4f;
+static const float kMaxStrokeWidth = 20.0f;
 
 }  // namespace
 
