@@ -244,6 +244,6 @@ std::array<float, 4> Utils::ColorFromHex(int hex) {
   int r = (hex & 0xff0000) >> 16;
   int g = (hex & 0xff00) >> 8;
   int b = (hex & 0xff);
-  return { r / 256.0f, g / 256.0f, b / 256.0f, a / 256.0f };
+  return { r / 256.0f, g / 256.0f, b / 256.0f, 256 / 256.0f };
 }
 
