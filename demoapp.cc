@@ -587,10 +587,9 @@ void DemoApp::StopPainting(bool commit_cur_segment) {
 }
 
 void DemoApp::ClearDrawing() {
-  for (auto it : committed_vbos_) {
-    glDeleteBuffers(1, &it.vbo);
-  }
-  committed_vbos_.clear();
+  glDeleteBuffers(1, &committed_vbos_[committed_vbos_.size() - 1].vbo);
+    if(committed_vbos_.size()>0)
+  committed_vbos_.erase(committed_vbos_.begin() + committed_vbos_.size() - 1);
 }
 
 void DemoApp::DrawObject(const gvr::Mat4f& mvp,
