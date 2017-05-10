@@ -23,18 +23,25 @@ int readInt(std::ifstream &input, char*buffer){
     return temp;
 }
 
+float readFloat(std::ifstream &input, char*buffer){
+    input.get(buffer, sizeof(float));
+    float temp = 0;
+    memcpy(&temp, buffer, sizeof(float));
+    return temp;
+}
+
 //file name is hardcoded for now, but could be changed later
 void DemoApp::Save(const std::vector<VboInfo> committed_vbos_) {
     std::vector<VboInfo> saved_committed_vbos_ = committed_vbos_;
     std::ofstream outputFile;
     std::string name = "output.txt";
-    outputFile.open(name, std::ofstream::binary | std::ofstream::in);
+    outputFile.open(name, std::ofstream::binary | std::ofstream::out);
     char buffer[60];
     for (int count = 0; count < saved_committed_vbos_.size(); count++) {
         write(outputFile, saved_committed_vbos_[count].vertex_count, buffer);
         write(outputFile, saved_committed_vbos_[count].color, buffer);
         for (int i = 0; i < saved_committed_vbos_[count].vertex_count; i++)
-            write(outputFile,vertices[count][i],buffer);
+            write(outputFile, vertices[count][i], buffer);
     }
     outputFile.close();
 
@@ -48,24 +55,30 @@ void DemoApp::Load() {
        */
     std::ifstream inputFile;
     std::string name = "output.txt";
-    inputFile.open(name);
-    GLuint a;
-    int b;
-    int c;
-    std::vector<GLuint> d;
-    std::vector<int> e;
-    std::vector<int> f;
-    while (inputFile >> a >> b >> c) {
-        d.push_back(a);
-        e.push_back(b);
-        f.push_back(c);
-    }
-    VboInfo load;
-    for (int count = 0; count < d.size(); count++) {
-        load.vbo = d[count];
-        load.vertex_count = e[count];
-        load.color = f[count];
-        committed_vbos_.push_back(load);
+    inputFile.open(name, std::ifstream::binary|std::ifstream::in);
+    int num;
+    int color;
+    float* vertex;
+    
+    std::vector<float*> tempFloat;
+    std::vector<int> nums;
+    std::vector<int> colors;
+    char buffer[60];
+    while (inputFile.good()) {
+        num = readInt(inputFile, buffer);
+        color = readInt(inputFile, buffer);
+        vertex = new float[num];
+        for(int i = 0; i < num; i++)
+            vertex[i] = readFloat(inputFile, buffer);
+        VboInfo load;
+        load.vetext_count = num;
+        load.color = color;
+        glGenBuffers(1, &load.vbo);
+        glBindBuffer(GL_ARRAY_BUFFER, load.vbo);
+        glBufferData(GL_ARRAY_BUFFER, num * sizeof(float),
+                 vertex, GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        vertices.pushBack(vertex);
     }
     inputFile.close();
 }
