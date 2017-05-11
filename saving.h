@@ -30,7 +30,7 @@
  *
  *      jyang4@wpi.edu
  *
- * This code includes no framework from Google Inc., this is the product of only the colloborators and Jinchao Yang.
+ * This code includes no framework from Google Inc. This code is the product of only the collaborators and Jinchao Yang.
  *
  */
 
