@@ -26,11 +26,11 @@
  * The goal of this project is to create a better VR Painter with 360 span for a wider range of
  * audiences with minimal excess hardware.
  *
- * This code has been created in colloboration with Jinchao Yang. For any questions, he can be contacted at:
+ * This code has been created in collaboration with Jinchao Yang. For any questions, he can be contacted at:
  *
  *      jyang4@wpi.edu
  *
- * This code includes no framework from Google Inc., this is the product of only the colloborators and Jinchao Yang.
+ * This code includes no framework from Google Inc. This code is the product of only the collaborators and Jinchao Yang.
  *
  */
 
